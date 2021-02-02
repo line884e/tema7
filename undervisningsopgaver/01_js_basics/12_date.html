@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div>
+        <p>Din alder</p>
+        <input type="text" id="dinAlderTxt">
+        <p>Din dates alder</p>
+        <input type="text" id="dinDatesAlderTxt">
+        <button>Går det?</button>
+
+    </div>
+
+    <script>
+        let dinAlder;
+        let datesAlder;
+        let minimumAlder;
+        let maximunAlder;
+
+        document.querySelector("button").addEventListener("click", button_clicked);
+
+        function button_clicked() {
+            dinAlder = document.querySelector("dinAlderTxt").value;
+            datesAlder = document.querySelector("dinDatesAlderTxt").value;
+            //            Hvad er det yngste din date må være
+
+            minimumAlder = Math.round(dinAlder / 2 + 7);
+            maximunAlder = Math.round((dinAlder - 7) * 1);
+            console.log("minimumAlder", minimumAlder);
+            console.log("maximunAlder", maximunAlder);
+
+            if (dinAlder < 15 || datesAlder < 15) {
+                console.log("En af parterne er for unge");
+
+            } else {
+                if (datesAlder >= minimumAlder && datesAlder <= maximunAlder) {
+                    console.log("Det er passende");
+
+                } else if (datesAlder < minimumAlderAlder) {
+                    console.log(`Du er ${dinAlder} og din date er ${datesAlder}. Din date er ${minimumAlder-datesAlder} år for ung`)
+                } else if (datesAlder >= maximunAlder) {
+                    console.log(`Du er ${dinAlder} og din date er ${datesAlder}. Din date er ${datesAlder-maximunAlder} år for gammel`)
+                }
+            }
+
+    </script>
+</body>
+
+</html>
