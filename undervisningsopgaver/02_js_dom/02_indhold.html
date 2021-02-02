@@ -70,21 +70,20 @@
 
 
     <script>
+        //    Udskift titel
         const overskrift = document.querySelector("h1");
-        overskrift.textContent
+        const artikel1 = document.querySelector("article:nth-child(1) p");
+        const artikel2 = document.querySelector("article:nth-child(2) p");
+        const artikelOverskrift1 = document.querySelector("article:nth-child(1) h3");
+        const artikelOverskrift2 = document.querySelector("article:nth-child(2) h3");
+        overskrift.textContent;
         console.log(overskrift.textContent);
-
-        const undertitel = document.querySelector("h2");
-        undertitel.textContent
-        console.log(undertitel.textContent);
-
-        const article = document.querySelector("h3");
-        article.textContent
-        console.log(article.textContent);
-
-        const tekst = document.querySelector("p");
-        tekst.textContent
-        console.log(tekst.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
+        artikel1.innerHTML = "Her er et <b>billede</b> af noget arkitektur";
+        artikel2.textContent = "Her er også et billede af noget arkitektur";
+        artikelOverskrift1.innerHTML = "<i>Arkitetur</i>";
+        artikelOverskrift2.textContent = "Arkitetur";
 
     </script>
 </body>
