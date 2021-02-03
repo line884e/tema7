@@ -38,7 +38,6 @@
         padding: 2rem;
 
     }
-
 </style>
 
 <body>
@@ -70,11 +69,15 @@
 
 
     <script>
-        window.addEventListener("load", sidenVises);
+        //        Tjek om dom er loaded på siden
+        document.addEventListener("DOMcontentLoaded", start);
 
-        function sidenVises() {
-            console.log("sidenVises");
+
+        function start() {
+            console.log("Dom er loaded");
+            titel.innerHTML = "<h1>BILLEDEGALLERI</h1>";
         }
+
         //    Udskift titel
         const overskrift = document.querySelector("h1");
         const artikel1 = document.querySelector("article:nth-child(1) p");
@@ -113,8 +116,5 @@
 
         //Jeg indsætter det
         mainSection.appendChild(newAticle);
-
     </script>
-</body>
-
-</html>
+</body></html>
