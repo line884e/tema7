@@ -90,5 +90,22 @@
 
         pic1.src = "images/natur.jpg";
         pic1.alt = "træer";
+
+        //        Tilføj ny artikel
+
+        let mainSection = document.querySelector("section");
+        //        Jeg har lavet et artice tag
+        let newAticle = document.createElement("article");
+        //        Jeg har lavet en overskrift
+        let overskrift = document.createElement("h3");
+        //        Jeg har lavet noget tekst til overskriften
+        let overskriftText = document.createTextNode("Ny artikel");
+        //        Jeg tilføjern teksten til den overskrift jeg har lavet
+        overskrift.appendChild(overskriftText);
+        //        Jeg tilføjer overskriften til mit article
+        newAticle.appendChild(overskrift);
+
+        //Jeg indsætter det
+        mainSection.appendChild(newAticle);
     </script>
 </body></html>
