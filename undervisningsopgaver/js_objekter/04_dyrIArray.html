@@ -17,23 +17,46 @@
 
 
     <script>
-        const dyr = {
-            "navn": "gris",
-            "type": "pattedyr",
-            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
-            "levested": "svinefarme"
-        }
+        let dyr = [{
+                "navn": "gris",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            },
+            {
+                "navn": "frø",
+                "type": "krybdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "sumpe"
+            },
+            {
+                "navn": "ræv",
+                "type": "rovdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "skove"
+            },
+            {
+                "navn": "sild",
+                "type": "fisk",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "havet"
+            },
+            {
+                "navn": "krokodille",
+                "type": "stort krybdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                "levested": "floder"
+            },
+        ]
 
-        console.log(dyr.navn);
-        console.log(dyr.type);
-        console.log(dyr.billede);
-        console.log(dyr.levested);
+        console.log(dyr);
 
-        console.log(`navn: ${dyr.navn} type: ${dyr.type} billede: ${dyr.billede} levested: ${dyr.levested}`);
+        //        const destination = document.querySelector("#dyr");
+        //        const informationer = `${dyr.navn} ${dyr.type} ${dyr.levested}`;
+        //        destination.querySelector("h3").textContent = informationer;
+        //        destination.querySelector("img").src = dyr.billede;
 
-        const destination = document.querySelector("#dyr");
-        const informationer = `${dyr.navn} ${dyr.type} ${dyr.levested}`;
-        destination.querySelector("h3").textContent = informationer;
-        destination.querySelector("img").src = dyr.billede;
     </script>
-</body></html>
+</body>
+
+</html>
