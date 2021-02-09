@@ -35,7 +35,6 @@
         header {
             text-align: center;
         }
-
     </style>
 
 </head>
@@ -60,7 +59,6 @@
         <article class="retter">
             <h2 class="navn"> </h2>
             <p class="kortbeskrivelse">Kort Beksrivelse: </p>
-            <p class="oprindelsesregion">Oprindelsesregion: </p>
             <p class="pris">Pris: </p>
             <img src="" alt="" class="billede">
         </article>
@@ -120,21 +118,24 @@
                 // hvis filter er lig med valuen af person.troende (ja, nej, tvivler) eller hvis filter er lig med "alle"
                 if (filter == ret.kategori || filter == "alle") {
                     const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".billede").src = medieurl + ret.billede[0];
+
                     klon.querySelector(".navn").textContent = ret.navn;
 
-                    klon.querySelector(".kortbeskrivelse").textContent += ret.beskrivelse;
+                    klon.querySelector(".kortbeskrivelse").textContent += ret.kortbeskrivelse;
 
-                    klon.querySelector(".oprindelsesregion").textContent += ret.oprindelsesregion;
+                    klon.querySelector(".pris").textContent = `${"Pris: "}` + ret.pris; + `${",-"}`;
 
-                    klon.querySelector(".pris").textContent += ret.pris;
+                    klon.querySelector(".retter").addEventListener("click", () => visDetaljer(ret));
 
-                    klon.querySelector(".billede").src = medieurl + ret.billede;
+
                     dest.appendChild(klon);
                 }
             })
         }
 
+        function visDetaljer(hvem) {
+            location.href = `02-detalje.html?id=${hvem._id}`;
+        }
     </script>
-</body>
-
-</html>
+</body></html>

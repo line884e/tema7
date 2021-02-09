@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,5 +15,37 @@
         <img src="" alt="" class="profil-billede">
     </article>
 
-    <script src=""></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const medieurl = "https://persongalleri-5d3e.restdb.io/media/";
+        let person;
+        const myHeaders = {
+            "x-apikey": "60116c1eef2e8a1b00036d3a"
+        }
+        console.log("ID", id);
+        document.addEventListener("DOMContentLoaded", loadJSON);
+
+        async function loadJSON() {
+            const JSONData = await fetch(`https://persongalleri-5d3e.restdb.io/rest/persongalleri/${id}`, {
+                headers: myHeaders
+            });
+            person = await JSONData.json();
+
+            console.log("Personer", person);
+            visPerson(person);
+
+        }
+
+        function visPerson() {
+            document.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+            document.querySelector(".profil-billede").src = medieurl + person.billede;
+            document.querySelector("button").addEventListener("click", tilbageTilPersonGalleri);
+        }
+
+        function tilbageTilPersonGalleri() {
+            history.back();
+        }
+    </script>
 </body></html>
