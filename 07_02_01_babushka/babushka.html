@@ -4,14 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100&display=swap" rel="stylesheet">
+    <title>babushka</title>
     <style>
         body {
             font-family: sans-serif;
+            background-color: aliceblue;
         }
 
         img {
             width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         #liste {
@@ -21,20 +28,28 @@
             margin: 2em;
         }
 
-        .person {
+        .retter {
             padding: 1em;
             border: 1px solid;
             border-radius: 1em;
         }
 
         .valgt {
-            color: red;
+            color: darkblue;
             border: solid;
         }
 
         header {
-            text-align: center;
+            margin-top: 4rem;
+            text-align: left;
         }
+
+        .overskrift {
+            text-align: center;
+            font-family: 'Big Shoulders Display', cursive;
+            font-size: 50px;
+        }
+
     </style>
 
 </head>
@@ -42,8 +57,12 @@
 
 
 <body>
+    <div class="overskrift">
+        <h1>Bistro Babushka</h1>
+    </div>
+
     <header>
-        <h1>Alle</h1>
+        <h2>Alle</h2>
         <nav>
             <button data-kategori="alle" class="valgt">Alle</button>
             <button data-kategori="forretter">Forretter</button>
@@ -59,14 +78,14 @@
         <article class="retter">
             <h2 class="navn"> </h2>
             <p class="kortbeskrivelse">Kort beksrivelse: </p>
-            <p class="pris">Pris: </p>
+            <p class="pris"></p>
             <img src="" alt="" class="billede">
         </article>
     </template>
 
 
     <script>
-        const header = document.querySelector("header h1");
+        const header = document.querySelector("header h2");
         const url = "https://babushka-dd8a.restdb.io/rest/menu";
         const medieurl = "https://babushka-dd8a.restdb.io/media/";
         const myHeaders = {
@@ -137,5 +156,8 @@
         function visDetaljer(hvem) {
             location.href = `02-detalje.html?id=${hvem._id}`;
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
