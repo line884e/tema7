@@ -59,6 +59,8 @@
             background-color: aliceblue;
             border: darkblue 1px solid;
             color: darkblue;
+            border-radius: 1em;
+            padding: 0.5em;
         }
 
         .valgt {
@@ -160,7 +162,7 @@
 
                     klon.querySelector(".kortbeskrivelse").textContent += ret.kortbeskrivelse;
 
-                    klon.querySelector(".pris").textContent = `${"Pris: "}` + ret.pris; + `${",-"}`;
+                    klon.querySelector(".pris").textContent = `${"Pris: "}` + ret.pris; + `${"kr."}`;
 
                     klon.querySelector(".retter").addEventListener("click", () => visDetaljer(ret));
 
