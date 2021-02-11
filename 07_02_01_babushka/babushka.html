@@ -69,6 +69,15 @@
             text-decoration: none;
         }
 
+
+        .dukke {
+            margin-left: 70vw;
+            margin-top: -5vw;
+            z-index: -15;
+            position: absolute;
+            width: 10vw;
+            height: 20vh;
+        }
     </style>
 
 </head>
@@ -79,8 +88,14 @@
     <div class="overskrift">
         <h1>Bistro Babushka</h1>
     </div>
+    <div class="dukke">
+        <img src="SVG/dukke.svg" alt="dukke">
+    </div>
+
+
 
     <header>
+
         <h2>Alle</h2>
         <nav>
             <button data-kategori="alle" class="valgt">Alle</button>
@@ -162,7 +177,7 @@
 
                     klon.querySelector(".kortbeskrivelse").textContent += ret.kortbeskrivelse;
 
-                    klon.querySelector(".pris").textContent = `${"Pris: "}` + ret.pris; + `${"kr."}`;
+                    klon.querySelector(".pris").textContent += `${ret.pris} -,`;
 
                     klon.querySelector(".retter").addEventListener("click", () => visDetaljer(ret));
 
@@ -175,8 +190,5 @@
         function visDetaljer(hvem) {
             location.href = `02-detalje.html?id=${hvem._id}`;
         }
-
     </script>
-</body>
-
-</html>
+</body></html>

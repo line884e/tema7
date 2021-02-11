@@ -8,7 +8,30 @@
     <link rel="stylesheet" href="">
 
     <style>
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: darkblue;
+            text-align: center;
+        }
 
+        p {
+            font-family: 'Montserrat', sans-serif;
+            color: darkblue;
+        }
+
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 1em;
+            margin: 2em;
+        }
+
+        img {
+            width: 30%;
+            height: 30%;
+            margin: 10px;
+        }
 
     </style>
 </head>
@@ -16,7 +39,7 @@
 <body>
     <article class="retter">
         <h2 class="navn"> </h2>
-        <p class="kortbeskrivelse">Kort Beksrivelse: </p>
+        <p class="kortbeskrivelse"></p>
         <p class="pris">Pris: </p>
         <img src="" alt="" class="billede">
     </article>
@@ -45,7 +68,13 @@
 
         function visRet() {
             document.querySelector(".navn").textContent = ret.navn;
+            document.querySelector(".pris").textContent += `${ret.pris} -,`;
+            document.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
             document.querySelector(".billede").src = medieurl + ret.billede;
+
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
